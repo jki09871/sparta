@@ -1,5 +1,6 @@
 package calculator;
 
+import javax.lang.model.SourceVersion;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -12,11 +13,11 @@ public class App {
         Scanner sc = new Scanner(System.in);
         int answer; // 계산된 값이 저장될 변수
         do {
-            System.out.print("첫 번째 숫자를 입력하세요: ");
-            int num = sc.nextInt();
+            System.out.print("첫 번째 값을 입력하세요: ");
+            int firstValue = sc.nextInt();
 
-            System.out.print("두 번째 숫자를 입력하세요: ");
-            int num2 = sc.nextInt();
+            System.out.print("두 번째 값을 입력하세요: ");
+            int secondValue = sc.nextInt();
 
             System.out.print("사칙연산 기호를 입력하세요: ");
             // 문자열을 읽고 charAt(0) 문자열에 몇번째것을 저장할건지 선택 (0번은 첫번째 문자를 읽어옴)
@@ -24,14 +25,14 @@ public class App {
 
 
             if (operator == '+') {
-                answer = num + num2;
+                answer = firstValue + secondValue;
             } else if (operator == '-') {
-                answer = num - num2;
+                answer = firstValue - secondValue;
             } else if (operator == '*') {
-                answer = num * num2;
+                answer = firstValue * secondValue;
             } else if (operator == '/') {
-                if (num2 != 0) {    // num2에 0값이 입력됐는지 확인
-                    answer = num / num2;
+                if (secondValue != 0) {    // firstValue2에 0값이 입력됐는지 확인
+                    answer = firstValue / secondValue;
                 } else {
                     System.out.println("두번째 입력한 숫자는 0이 될 수 없습니다.");
                     return;
@@ -43,13 +44,23 @@ public class App {
 
 
             resultSave.add(answer); // 계산된 값을 List에 넣는다.
-            System.out.println(num + "" + operator + "" + num2 + "=" + answer);
             System.out.println("resultSave 저장된 값 => " + resultSave.toString()); // List에 저장된 값 보기.
 
             System.out.print("첫번째 값을 삭제하시겠습니까? (remove 입력 시 삭제) : ");
             if (sc.next().equals("remove")) { // remove 입력시 List에 첫번째 값을 삭제
+
+                System.out.println("삭제된 값 : " + resultSave.get(0));
                 resultSave.remove(0);
-                System.out.println("resultSave 저장된 값 => " + resultSave.toString());
+
+            }
+
+            System.out.print("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회) : ");
+            if (sc.next().equals("inquiry")) {
+
+                // 향상된 for문 resultSave에 저장된 값을 하나씩 calculatedValue 변수에 담는다.
+                for (Integer calculatedValue : resultSave) {
+                    System.out.println("저장된 값 = " + calculatedValue);
+                }
             }
             System.out.print("더 계산하시겠습니까? (exit 입력 시 종료) : ");
         } while (!sc.next().equals("exit"));

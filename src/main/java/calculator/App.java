@@ -20,5 +20,27 @@ public class App {
         char operator= sc.next().charAt(0);
 
         System.out.println("operator = " + operator);
+
+        int answer = 0;
+
+        if (operator == '+'){
+            answer = num + num2;
+        }else if (operator == '-'){
+            answer = num - num2;
+        }else if (operator == '*'){
+            answer = num * num2;
+        }else if (operator == '/'){
+            if (num2 != 0) {
+                answer = num / num2;
+            } else {
+                System.out.println("두번째 입력한 숫자는 0이 될 수 없습니다.");
+                return;
+            }
+        }else {
+            System.out.println("사칙여산 기호를 입력 해주세요");
+            return;
+        }
+
+        System.out.println("결과: " + answer);
     }
 }

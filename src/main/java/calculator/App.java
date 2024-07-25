@@ -1,10 +1,13 @@
 package calculator;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class App {
 
     public static void main(String[] args) {
+        int[] resultSave = new int[10];
+        int index = 0;
         Scanner sc = new Scanner(System.in);
 
         do {
@@ -43,8 +46,17 @@ public class App {
             }
 
             System.out.println("결과: " + answer);
+            resultSave[index] = answer;
+            index++;
+//            가장 기본적이게 보는 방법 1첫째 방법
+//            for (int i = 0; i < resultSave.length; i++){
+//                System.out.println(i +"번째 결과 = " + resultSave[i]);
+//            }
+//            배열의 값을 더 편하게 볼 수있는 방법
+            System.out.println("Arrays.toString(resultSave) = "+Arrays.toString(resultSave));
+
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
         }while (!sc.next().equals("exit"));
-            System.out.println("계산이 종료되었습니다.");
+        System.out.println("계산이 종료되었습니다.");
     }
 }

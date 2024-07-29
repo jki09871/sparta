@@ -26,13 +26,13 @@ public class App {
             char operator = sc.next().charAt(0);
 
             int calculate = calculator.calculate(firstValue, secondValue, operator);
-            calculator.resultSave.add(calculate);
+            calculator.getResultSave().add(calculate);
 
 
 
             System.out.print("첫번째 값을 삭제하시겠습니까? (remove 입력 시 삭제) : ");
             if (sc.next().equals("remove")) { // remove 입력시 List에 첫번째 값을 삭제
-                calculator.resultSave.remove(0);
+                calculator.getResultSave().remove(0);
 
             }
 
@@ -40,7 +40,7 @@ public class App {
             if (sc.next().equals("inquiry")) {
 
                 // 향상된 for문 resultSave에 저장된 값을 하나씩 calculatedValue 변수에 담는다.
-                for (Integer calculatedValue : calculator.resultSave) {
+                for (Integer calculatedValue : calculator.getResultSave()) {
                     System.out.println("저장된 값 = " + calculatedValue.toString());
                 }
             }

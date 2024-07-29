@@ -2,7 +2,7 @@ package calculator;
 
 public class AddOperator {
 
-    public double addition(double firstNum, double secondNum){
+    public int addition(int firstNum, int secondNum){
         return firstNum + secondNum;
     }
 }

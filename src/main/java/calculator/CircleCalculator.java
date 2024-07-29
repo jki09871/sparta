@@ -11,7 +11,6 @@ public class CircleCalculator extends Calculator {
 
     public double calculateCircleArea(double radius) {
         double area = PI * radius * radius;
-        addResult(area);
         return area;
     }
 }

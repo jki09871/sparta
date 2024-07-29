@@ -2,7 +2,7 @@ package calculator;
 
 public class SubtractOperator {
 
-    public double subtraction(double firstNum, double secondNum){
+    public int subtraction(int firstNum, int secondNum){
         return firstNum - secondNum;
     }
 }

@@ -10,16 +10,13 @@ public abstract class Calculator {
         this.results = results;
     }
 
-//    public List<Double> getResults() {
-//        return results;
-//    }
 
     public void setResults(List<Double> results) {
         this.results = results;
     }
 
-    public void addResult(Double result) {
-        results.add(result);
+    public List<Double> addResult() {
+        return results;
     }
 
     public void removeResult(int index) {

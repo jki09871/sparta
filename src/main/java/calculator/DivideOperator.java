@@ -2,7 +2,7 @@ package calculator;
 
 public class DivideOperator {
 
-    public double divide(double firstNum, double secondNum){
+    public int divide(int firstNum, int secondNum){
         return firstNum / secondNum;
     }
 }

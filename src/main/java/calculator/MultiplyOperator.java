@@ -2,7 +2,7 @@ package calculator;
 
 public class MultiplyOperator {
 
-    public double multiply(double firstNum, double secondNum){
+    public int multiply(int firstNum, int secondNum){
         return firstNum * secondNum;
     }
 }

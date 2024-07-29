@@ -32,7 +32,7 @@ public class App {
 
             System.out.print("첫번째 값을 삭제하시겠습니까? (remove 입력 시 삭제) : ");
             if (sc.next().equals("remove")) { // remove 입력시 List에 첫번째 값을 삭제
-                calculator.getResultSave().remove(0);
+                calculator.removeResult(0);
 
             }
 

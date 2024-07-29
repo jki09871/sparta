@@ -37,4 +37,8 @@ public class Calculator {
     public void setResultSave(List<Integer> resultSave){
         this.resultSave = resultSave;
     }
+
+    public void removeResult(int intdex) {
+       resultSave.remove(intdex);
+    }
 }

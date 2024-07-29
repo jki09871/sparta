@@ -38,11 +38,7 @@ public class App {
 
             System.out.print("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회) : ");
             if (sc.next().equals("inquiry")) {
-
-                // 향상된 for문 resultSave에 저장된 값을 하나씩 calculatedValue 변수에 담는다.
-                for (Integer calculatedValue : calculator.getResultSave()) {
-                    System.out.println("저장된 값 = " + calculatedValue.toString());
-                }
+                calculator.inquiryResults();
             }
             System.out.print("더 계산하시겠습니까? (exit 입력 시 종료) : ");
         } while (!sc.next().equals("exit"));

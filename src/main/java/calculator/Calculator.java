@@ -41,4 +41,10 @@ public class Calculator {
     public void removeResult(int intdex) {
        resultSave.remove(intdex);
     }
+
+    public void inquiryResults() {
+        for (Integer calculatedValue : resultSave) {
+            System.out.println("저장된 값 = " + calculatedValue.toString());
+        }
+    }
 }

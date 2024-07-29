@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator {
-    /* 연산 결과를 저장하는 컬렉션 타입 필드 선언 및 생성 */
+    private static final double PI = 3.141592;
     private List<Integer> resultSave;
+    private List<Double> circleAreas;
 
-    public Calculator(List<Integer> resultSave){
+    public Calculator(List<Integer> resultSave, List<Double> circleAreas){
         this.resultSave = resultSave;
+        this.circleAreas = circleAreas;
     }
 
 
@@ -37,18 +39,39 @@ public class Calculator {
     public List<Integer> getResultSave(){
         return resultSave;
     }
-
     public void setResultSave(List<Integer> resultSave){
         this.resultSave = resultSave;
     }
 
+    // 사칙연산 결과 리스트에서 특정 인덱스의 결과를 삭제하는 메서드입니다.
     public void removeResult(int intdex) {
        resultSave.remove(intdex);
     }
 
+    // 사칙연산 결과 리스트를 조회하는 메서드입니다.
     public void inquiryResults() {
         for (Integer calculatedValue : resultSave) {
             System.out.println("저장된 값 = " + calculatedValue.toString());
         }
     }
+
+    // 원의 넓이를 계산하는 메서드입니다.
+    public double calculateCircleArea(double radius) {
+        double area = PI * radius * radius;
+        circleAreas.add(area);
+        return area;
+    }
+
+    // 원의 넓이 결과를 저장하는 리스트의 Getter와 Setter입니다.
+    public List<Double> getCircleAreas() {
+        return circleAreas;
+    }
+
+    // 원의 넓이 결과 리스트를 조회하는 메서드입니다.
+    public void inquiryCircleAreas() {
+        for (Double area : circleAreas) {
+            System.out.println("저장된 원의 넓이 = " + area);
+        }
+    }
+
 }

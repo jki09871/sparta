@@ -10,10 +10,9 @@ public class App {
 
     public static void main(String[] args) {
 
-        Calculator calculator = new Calculator();
+        Calculator calculator = new Calculator(new ArrayList<>());
 
         Scanner sc = new Scanner(System.in);
-        int answer; // 계산된 값이 저장될 변수
         do {
             System.out.print("첫 번째 값을 입력하세요: ");
             int firstValue = sc.nextInt();

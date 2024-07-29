@@ -5,7 +5,11 @@ import java.util.List;
 
 public class Calculator {
     /* 연산 결과를 저장하는 컬렉션 타입 필드 선언 및 생성 */
-    private List<Integer> resultSave = new ArrayList<>();
+    private List<Integer> resultSave;
+
+    public Calculator(List<Integer> resultSave){
+        this.resultSave = resultSave;
+    }
 
 
     public int calculate(int firstValue, int secondValue, char operator) {
